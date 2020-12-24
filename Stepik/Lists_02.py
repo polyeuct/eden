@@ -1,11 +1,13 @@
-a = [int(i) for i in input().split()]
+a = [int(i) for i in input().split()]  # List Comprehension
 result = []
+left = -1
+right = 1
 if len(a) == 1:
-    result.append(a)
+    result.append(*a)
 else:
     for n in a[:-1]:
-        left = a.index(n) - 1
-        right = a.index(n) + 1
         result.append(a[left] + a[right])
+        left += 1
+        right += 1
     result.append(a[-2] + a[0])
-print(result)
+print(*result)
