@@ -9,3 +9,4 @@ for j in range(len(row)):
         col += [row[i][j]]
 print(row)
 print(col)
+
