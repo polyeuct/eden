@@ -1,13 +1,16 @@
-row = [[int(i) for i in input().split()]]
+mtx = [[int(i) for i in input().split()]]
 X = input()
 while X != 'end':
-    row.append([int(i) for i in X.split()])
+    mtx.append([int(i) for i in X.split()])
     X = input()
-for i in range(len(row)):
-    for j in range(len(row[i])):
-        if i == len(row) - 1:
-            i = -1
-        if j == len(row[i]) - 1:
-            j = -1
-        print((row[i - 1][j] + row[i + 1][j]) + (row[i][j - 1] + row[i][j + 1]), end=' ')
-    print()
+if len(mtx) == 1:
+    print(mtx[0][0] * 4)
+else:
+    for row in range(len(mtx)):
+        for col in range(len(mtx[row])):
+            if row == len(mtx) - 1:
+                row = -1
+            if col == len(mtx[row]) - 1:
+                col = -1
+            print((mtx[row - 1][col] + mtx[row + 1][col]) + (mtx[row][col - 1] + mtx[row][col + 1]), end=' ')
+        print()
